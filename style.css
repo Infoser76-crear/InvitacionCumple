@@ -1,0 +1,165 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  /* background: #e91e63; */ /* Quitá esta línea */
+  background-image: url('Inv1.png');
+  background-size: cover;
+  background-position: center;
+  transition: background 0.5s ease;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.container-letter {
+  position: relative;
+  width: 400px; /* Antes 400px o 300px */
+  height: 300px; /* Podés dejarlo o ajustarlo si el texto se ve corto */
+  background: #fff0f5;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  /* background: #e91e63; */ /* Quitá esta línea */
+  background-image: url('Inv.png');
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  transform-origin: top;
+  transition: transform 0.8s ease;
+  z-index: 3;
+}
+
+.cover.opened {
+  transform: rotateX(200deg);
+  z-index: 0; /* ¡Muy importante! Para que no tape el mensaje */
+}
+
+/* ...existing code... */
+.tapa-texto {
+  position: absolute;
+  top: 10;
+  left: 0;
+  width: 100%;
+  height: 350px; /* Ajusta según tu diseño */
+  object-fit: cover;
+  border-radius: 0 0 12px 12px;
+  z-index: 2;
+  transition: opacity 0.5s;
+}
+
+.container-letter.opened .tapa-texto {
+  opacity: 0;
+  pointer-events: none;
+}
+/* ...existing code... */
+
+.heart {
+  font-size: 32px;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.paper {
+  position: absolute;
+  top: 0; /* Justo debajo del corazón */
+  left: 0;
+  width: 100%;
+  height: 100%; /* Ocupa todo el alto del contenedor */
+  padding: 60px 30px;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background-image: url('Inv4.png');
+  background-size: contain;
+  background-position: center;
+}
+
+.container-letter.opened .paper {
+  opacity: 1;
+}
+
+.letter {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  /* background: #e91e63; */ /* Quitá esta línea */
+  background-image: url('Inv2.png');
+  background-size: cover;
+  background-position: center;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  z-index: 2;
+}
+
+.selector {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: #aa0044;
+}
+
+.options {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#open {
+  background: #ff4081;
+  color: white;
+}
+
+#open:disabled {
+  background: #ffc1d6;
+  color: white;
+  cursor: not-allowed;
+}
+
+#close {
+  background: #e91e63;
+  color: white;
+}
+
+#close:disabled {
+  background: #f77ea7;
+  color: white;
+  cursor: not-allowed;
+}

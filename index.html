@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Invitación al Cumpleaños de Raquel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <div class="container-letter">
+      <div class="cover" id="cover"></div>
+      <span class="heart"></span>
+      <img src="Inv3.png" class="tapa-texto" id="tapaTexto" alt="Tapa de la invitación">
+      <p class="paper" id="mainMessage">
+        "¡Estás invitada a celebrar el cumpleaños de Raquel!<br>
+        Vení a compartir una tarde especial llena de alegría, amistad y buenos momentos.<br>
+        <b>Fecha:</b> 15 de junio, 17:00 hs<br>
+        <b>Lugar:</b> Casa de Raquel<br>
+        ¡Te esperamos para festejar juntos!"
+      </p>
+      <div class="letter"></div>
+    </div>
+
+    <div class="selector">
+      <label for="nombre">Busca tu nombre para ver si has sido intitada:</label>
+      <select id="nombre">
+        <option value="">-- Seleccioná --</option>
+        <option value="Vicenta">Vicenta</option>
+        <option value="Lenny">Lenny</option>
+        <option value="Rocio">Rocio</option>
+        <option value="Karina">Karina</option>
+        <option value="Menly">Menly</option>
+        <option value="Vilma">Vilma</option>
+        <option value="Grisel">Grisel</option>
+        <option value="Ceci">Ceci</option>
+        <option value="Niche">Niche</option>
+        <option value="Belén">Belén</option>
+        <option value="Gaby">Gaby</option>
+      </select>
+    </div>
+
+    <div class="options">
+      <button id="open" disabled>Abrir Invitación</button>
+      <button id="close" disabled>Cerrar Invitación</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
